@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Birthday Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="pulse"></div>
+        <p>Assembling cosmic birthday particles...</p>
+    </div>
+
+    <!-- Main Experience -->
+    <div id="experience" class="hidden">
+        <!-- Section 1: Cosmic Entrance -->
+        <section id="cosmic-entrance">
+            <canvas id="starfield"></canvas>
+            <div class="center-content">
+                <h1 class="glitch" data-text="THE UNIVERSE HAS BEEN WAITING">THE UNIVERSE HAS BEEN WAITING</h1>
+                <p class="subtitle">For this exact cosmic alignment that is YOU</p>
+                <button class="enter-btn" onclick="enterExperience()">Begin Cosmic Journey</button>
+            </div>
+        </section>
+
+        <!-- Section 2: Personal Constellation -->
+        <section id="constellation" class="hidden">
+            <canvas id="constellation-canvas"></canvas>
+            <div class="constellation-info">
+                <h2>Your Personal Star Pattern</h2>
+                <p>Generated from your unique energy signature</p>
+                <input type="text" id="nameInput" placeholder="Enter your name" oninput="generateStars(this.value)">
+            </div>
+        </section>
+
+        <!-- Section 3: Time-Travel Messages -->
+        <section id="time-capsule" class="hidden">
+            <div class="time-machine">
+                <div class="time-slider">
+                    <input type="range" min="0" max="23" value="0" class="slider" id="timeSlider">
+                    <div class="time-markers"></div>
+                </div>
+                <div class="message-display">
+                    <div class="message" data-time="8">🌅 Morning cosmic energy activated</div>
+                    <div class="message" data-time="12">☀️ Solar flares of joy incoming</div>
+                    <div class="message" data-time="16">🌈 Afternoon aurora of laughter</div>
+                    <div class="message" data-time="20">🌙 Moonbeam wishes delivered</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Infinite Wish Generator -->
+        <section id="wish-generator" class="hidden">
+            <div class="wish-machine">
+                <h2>Quantum Wish Generator</h2>
+                <div class="wish-display" id="wishText"></div>
+                <button onclick="generateWish()">Generate Unique Wish</button>
+                <div class="variables">
+                    <label>Add your favorite things (comma separated):</label>
+                    <input type="text" id="favThings" placeholder="coffee, music, stars, pizza...">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Interactive Galaxy -->
+        <section id="interactive-galaxy" class="hidden">
+            <canvas id="galaxy-canvas"></canvas>
+            <div class="instructions">
+                <p>Click to create stars • Drag to explore • Scroll to zoom</p>
+                <p>Your personal galaxy is forming...</p>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section id="final-message" class="hidden">
+            <div class="message-container">
+                <h2 class="typewriter">You are not just having a birthday...</h2>
+                <h3 class="typewriter-delay">You are a universe celebrating its own expansion</h3>
+                <div class="fireworks-container"></div>
+                <button class="share-btn" onclick="shareExperience()">✨ Share This Experience</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="bg-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-space-game-668.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+      </html>
